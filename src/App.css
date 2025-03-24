@@ -1,0 +1,94 @@
+.app {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+.user-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.user-card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-card h2 {
+  margin-top: 0;
+  color: #2c3e50;
+}
+
+.transaction-actions {
+  margin-top: auto;
+  display: flex;
+  gap: 10px;
+  padding-top: 15px;
+}
+
+button {
+  padding: 8px 12px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  flex: 1;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.transactions {
+  margin: 10px 0;
+  flex-grow: 1;
+}
+
+.transactions h3 {
+  margin-bottom: 8px;
+  font-size: 1rem;
+}
+
+.transactions ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.transactions li {
+  padding: 5px;
+  margin: 5px 0;
+  border-radius: 4px;
+  font-size: 0.9rem;
+}
+
+.transactions .deposit {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.transactions .withdraw {
+  background-color: #f8d7da;
+  color: #721c24;
+}
+
+@media (max-width: 900px) {
+  .user-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .user-grid {
+    grid-template-columns: 1fr;
+  }
+}
