@@ -4,7 +4,7 @@ import './App.css';
 
 function App() {
   const [users, setUsers] = useState([
-    {
+    { 
       id: 1,
       firstName: 'Fabricio',
       lastName: 'Braga',
@@ -50,6 +50,15 @@ function App() {
       id: 6,
       firstName: 'Serena',
       lastName: 'Williams',
+      transactions: [
+        { type: 'withdraw', amount: 200 },
+        { type: 'withdraw', amount: 50 }
+      ]
+    },
+    {
+      id: 7,
+      firstName: 'Nelson',
+      lastName: 'Mandela',
       transactions: [
         { type: 'withdraw', amount: 200 },
         { type: 'withdraw', amount: 50 }
