@@ -92,3 +92,21 @@ button:hover {
     grid-template-columns: 1fr;
   }
 }
+
+.total-balance {
+  margin-top: 10px;
+  padding: 8px;
+  border-radius: 4px;
+  font-weight: bold;
+  text-align: right;
+}
+
+.total-balance.positive {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.total-balance.negative {
+  background-color: #f8d7da;
+  color: #721c24;
+}
