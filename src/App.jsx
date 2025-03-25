@@ -1,69 +1,13 @@
+// App.jsx
 import { useState } from 'react';
+import { Routes, Route, Link } from 'react-router-dom';
 import User from './components/User';
+import Backoffice from './pages/Backoffice';
 import './App.css';
 
 function App() {
   const [users, setUsers] = useState([
-    { 
-      id: 1,
-      firstName: 'Fabricio',
-      lastName: 'Braga',
-      transactions: [
-        { type: 'deposit', amount: 100 },
-        { type: 'withdraw', amount: 50 }
-      ]
-    },
-    {
-      id: 2,
-      firstName: 'Mark',
-      lastName: 'Cavendish',
-      transactions: [
-        { type: 'deposit', amount: 200 },
-        { type: 'withdraw', amount: 75 },
-        { type: 'deposit', amount: 150 }
-      ]
-    },
-    {
-      id: 3,
-      firstName: 'Angela',
-      lastName: 'Davis',
-      transactions: [
-        { type: 'deposit', amount: 500 },
-        { type: 'withdraw', amount: 100 }
-      ]
-    },
-    {
-      id: 4,
-      firstName: 'Betrand',
-      lastName: 'Russel',
-      transactions: []
-    },
-    {
-      id: 5,
-      firstName: 'Mike',
-      lastName: 'Tyson',
-      transactions: [
-        { type: 'deposit', amount: 1000 }
-      ]
-    },
-    {
-      id: 6,
-      firstName: 'Serena',
-      lastName: 'Williams',
-      transactions: [
-        { type: 'withdraw', amount: 200 },
-        { type: 'withdraw', amount: 50 }
-      ]
-    },
-    {
-      id: 7,
-      firstName: 'Nelson',
-      lastName: 'Mandela',
-      transactions: [
-        { type: 'withdraw', amount: 200 },
-        { type: 'withdraw', amount: 50 }
-      ]
-    }
+    // (your users here, unchanged)
   ]);
 
   const addTransaction = (userId, type, amount) => {
@@ -80,16 +24,30 @@ function App() {
 
   return (
     <div className="app">
-      <h1>Banking App</h1>
-      <div className="user-grid">
-        {users.map(user => (
-          <User 
-            key={user.id} 
-            user={user} 
-            onAddTransaction={addTransaction} 
-          />
-        ))}
-      </div>
+      {/* Navigation Menu */}
+      <nav style={{ marginBottom: '20px' }}>
+        <Link to="/" style={{ marginRight: '10px' }}>Home</Link>
+        <Link to="/backoffice">Backoffice</Link>
+      </nav>
+
+      {/* Routes */}
+      <Routes>
+        <Route path="/" element={
+          <>
+            <h1>Banking App</h1>
+            <div className="user-grid">
+              {users.map(user => (
+                <User 
+                  key={user.id} 
+                  user={user} 
+                  onAddTransaction={addTransaction} 
+                />
+              ))}
+            </div>
+          </>
+        } />
+        <Route path="/backoffice" element={<Backoffice />} />
+      </Routes>
     </div>
   );
 }
